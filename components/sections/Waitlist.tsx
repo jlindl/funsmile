@@ -30,8 +30,8 @@ export default function Waitlist() {
   };
 
   return (
-    <section id="waitlist" className="scroll-mt-28 px-3 py-20 sm:px-5 sm:py-24">
-      <div className="relative mx-auto max-w-[90rem] overflow-hidden rounded-[3rem] bg-gradient-to-br from-candy via-[#b94dd6] to-sky px-6 py-16 sm:px-12 sm:py-24">
+    <section id="waitlist" className="scroll-mt-28 px-3 py-12 sm:px-5 sm:py-24">
+      <div className="relative mx-auto max-w-[90rem] overflow-hidden rounded-[2rem] bg-gradient-to-br from-candy via-[#b94dd6] to-sky px-5 py-12 sm:rounded-[3rem] sm:px-12 sm:py-24">
         <Bubbles count={8} />
         <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 hidden w-[45%] lg:block">
           {flavours.map((f, i) => (
@@ -52,7 +52,7 @@ export default function Waitlist() {
             <Icon name="sparkle" className="h-4 w-4" />
             The launch list
           </p>
-          <h2 className="mt-4 font-display text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl">
+          <h2 className="mt-4 font-display text-[2.6rem] font-semibold leading-[0.98] tracking-tight sm:text-6xl">
             Be first to try FunSmile in {LAUNCH_YEAR}.
           </h2>
           <p className="mt-5 text-lg text-white/90">
@@ -89,7 +89,7 @@ export default function Waitlist() {
                         key={f.slug}
                         aria-pressed={on}
                         onClick={() => setFlavour(on ? null : f.slug)}
-                        className={`flex items-center gap-2 rounded-full py-1.5 pl-1.5 pr-4 font-display font-semibold transition ${on ? "bg-white text-ink" : "bg-white/20 text-white ring-1 ring-white/50 hover:bg-white/30"}`}
+                        className={`flex min-h-11 items-center gap-2 rounded-full py-1.5 pl-2 pr-4 font-display font-semibold transition ${on ? "bg-white text-ink" : "bg-white/20 text-white ring-1 ring-white/50 hover:bg-white/30"}`}
                       >
                         <span className="h-5 w-5 rounded-full ring-2 ring-white" style={{ background: f.colour }} aria-hidden />
                         {f.short}

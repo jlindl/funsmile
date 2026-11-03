@@ -13,7 +13,7 @@ export default function PackCard({ flavour, formula }: Props) {
 
   return (
     <article className="group relative flex h-full flex-col rounded-[2.25rem] bg-white p-3 shadow-[0_2px_0_0_var(--color-line),0_18px_40px_-24px_rgba(30,27,75,0.25)] ring-1 ring-line transition duration-500 ease-out-expo hover:-translate-y-2 hover:shadow-[0_2px_0_0_var(--color-line),0_30px_60px_-28px_rgba(30,27,75,0.4)]">
-      <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-[1.75rem]" style={{ background: flavour.soft }}>
+      <div className="relative flex h-72 items-center justify-center overflow-hidden rounded-[1.75rem] sm:h-80" style={{ background: flavour.soft }}>
         {/* Foam puddle under the pack */}
         <div aria-hidden className="absolute bottom-6 h-10 w-44 rounded-[50%] bg-white/70 blur-md" />
         <span aria-hidden className="bubble-ink absolute left-[18%] top-[30%] h-6 w-6 transition duration-700 group-hover:-translate-y-6" style={{ "--bubble": flavour.colour } as React.CSSProperties} />
@@ -24,7 +24,7 @@ export default function PackCard({ flavour, formula }: Props) {
           alt={`FunSmile ${flavour.name} toothpaste pump pack`}
           width={320}
           height={1500}
-          className="relative h-72 w-auto -rotate-6 transition duration-700 ease-spring group-hover:rotate-6 group-hover:scale-105"
+          className="relative h-64 w-auto -rotate-6 sm:h-72 transition duration-700 ease-spring group-hover:rotate-6 group-hover:scale-105"
         />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2">
           <Badge className="bg-white text-ink shadow-sm">{info.label}</Badge>
@@ -59,10 +59,10 @@ export default function PackCard({ flavour, formula }: Props) {
             </li>
           ))}
         </ul>
-        <div className="mt-auto flex items-center justify-between pt-6">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-3 gap-y-2 pt-6">
           <span className="text-sm font-semibold text-ink-muted">Price at launch</span>
           <span
-            className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-display font-semibold text-white transition group-hover:gap-2.5"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 font-display font-semibold text-white transition group-hover:gap-2.5"
             style={{ background: flavour.colour }}
           >
             Take a look <Icon name="arrow" className="h-4 w-4" />

@@ -14,7 +14,7 @@ const points = [
   { title: "Fluoride-free", body: "It's the active ingredient in every FunSmile fluoride-free flavour." },
 ];
 
-// Honeycomb of enamel "crystals". Some start as gaps and get filled by nano-HA.
+// Honeycomb of enamel "crystals". Some start as gaps and get filled by nano‑HA.
 const COLS = 9;
 const ROWS = 6;
 const GAPS = new Set([3, 11, 15, 21, 25, 31, 38, 42, 47]);
@@ -31,8 +31,8 @@ function hexPath(cx: number, cy: number, r: number) {
 export default function NanoHA() {
   return (
     <section id="nano-ha" aria-labelledby="nano-title" className="scroll-mt-28 pb-20 sm:pb-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid items-center gap-12 overflow-hidden rounded-[3rem] bg-leaf-soft p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
+      <div className="mx-auto max-w-7xl px-3 sm:px-8">
+        <div className="grid items-center gap-10 overflow-hidden rounded-[2rem] bg-leaf-soft px-5 py-8 sm:rounded-[3rem] sm:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
           <div>
             <Reveal>
               <SectionHeading
@@ -40,7 +40,7 @@ export default function NanoHA() {
                 eyebrow="Our fluoride-free hero"
                 title={
                   <span id="nano-title">
-                    Meet <Highlight className="text-leaf" curve="text-sky">nano-HA</Highlight>.
+                    Meet <Highlight className="text-leaf" curve="text-sky">nano‑HA</Highlight>.
                   </span>
                 }
                 sub={NANO_HA.what}
@@ -116,7 +116,7 @@ function EnamelGraphic() {
           <span className="h-4 w-4 rounded border-2 border-dashed border-leaf/50" /> Weak spot
         </span>
         <span className="flex items-center gap-2">
-          <span className="h-4 w-4 rounded bg-leaf" /> Filled by nano-HA
+          <span className="h-4 w-4 rounded bg-leaf" /> Filled by nano‑HA
         </span>
       </div>
     </div>

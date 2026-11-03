@@ -27,7 +27,7 @@ export default function Home() {
       <FlavourMarquee />
       <Range />
       <Stats />
-      <div className="py-24 sm:py-32">
+      <div className="py-12 sm:py-24 lg:py-32">
         <FlavourPicker />
       </div>
       <LabTested />

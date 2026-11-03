@@ -20,7 +20,7 @@ const fan = [
 const trust = [
   { icon: "flask" as const, label: "Lab tested", colour: "bg-sky" },
   { icon: "shield" as const, label: "Certified safe", colour: "bg-berry" },
-  { icon: "leaf" as const, label: "Fluoride or nano-HA", colour: "bg-leaf" },
+  { icon: "leaf" as const, label: "Fluoride or nano‑HA", colour: "bg-leaf" },
 ];
 
 export default function Hero() {
@@ -50,7 +50,7 @@ export default function Hero() {
 
   return (
     <section ref={ref} onPointerMove={onMove} className="relative overflow-hidden bg-gradient-to-b from-white via-white to-blush">
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 pb-10 pt-10 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:pb-16 lg:pt-14">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-5 pb-6 pt-8 sm:gap-8 sm:px-8 sm:pb-10 sm:pt-10 lg:grid-cols-[1.05fr_1fr] lg:pb-16 lg:pt-14">
         <motion.div style={reduce ? undefined : { y: copyY, opacity: copyOpacity }}>
           <motion.p {...enter(0)} className="inline-flex items-center gap-2 rounded-full bg-sky-soft px-4 py-2 font-display font-semibold text-sky-deep">
             <Icon name="sparkle" className="h-4 w-4" />
@@ -74,12 +74,12 @@ export default function Hero() {
             Meet Watermelon Fresh, Cotton Candy and Blue Raspberry. Seriously tasty toothpaste with fluoride, or fluoride-free with nano-hydroxyapatite. Lab tested to keep smiles healthy.
           </motion.p>
 
-          <motion.div {...enter(0.24)} className="mt-9 flex flex-wrap gap-4">
-            <Button href="#waitlist">Get notified at launch</Button>
-            <Button href="#range" variant="outline">Meet the flavours</Button>
+          <motion.div {...enter(0.24)} className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:gap-4">
+            <Button href="#waitlist" className="w-full sm:w-auto">Get notified at launch</Button>
+            <Button href="#range" variant="outline" className="w-full sm:w-auto">Meet the flavours</Button>
           </motion.div>
 
-          <motion.ul {...enter(0.32)} className="mt-10 flex flex-wrap gap-3">
+          <motion.ul {...enter(0.32)} className="mt-8 flex flex-wrap gap-2 sm:mt-10 sm:gap-3">
             {trust.map((t) => (
               <li key={t.label} className="flex items-center gap-2 rounded-full bg-white py-1.5 pl-1.5 pr-4 font-display font-medium text-ink-soft shadow-sm ring-1 ring-line">
                 <span className={`grid h-7 w-7 place-items-center rounded-full text-white ${t.colour}`}>
@@ -92,7 +92,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto h-[470px] w-full max-w-[540px] sm:h-[580px]"
+          className="relative mx-auto h-[380px] w-full max-w-[540px] sm:h-[580px]"
           style={reduce ? undefined : { y: stageY, rotate: stageRotate }}
         >
           <Blob />
@@ -156,7 +156,7 @@ function Pack({
               width={320}
               height={1500}
               priority
-              className="h-[380px] w-auto drop-shadow-[0_28px_28px_rgba(30,27,75,0.22)] sm:h-[480px]"
+              className="h-[300px] w-auto drop-shadow-[0_28px_28px_rgba(30,27,75,0.22)] sm:h-[480px]"
             />
           </div>
         </motion.div>
@@ -192,14 +192,14 @@ function LaunchSeal() {
     return `${(50 + r * Math.cos(a)).toFixed(2)},${(50 + r * Math.sin(a)).toFixed(2)}`;
   }).join(" ");
   return (
-    <div className="absolute right-0 top-6 z-10 grid h-28 w-28 animate-wiggle place-items-center sm:right-4 sm:h-32 sm:w-32">
+    <div className="absolute right-0 top-0 z-10 grid h-24 w-24 animate-wiggle place-items-center sm:right-4 sm:top-6 sm:h-32 sm:w-32">
       <svg viewBox="0 0 100 100" className="absolute inset-0 drop-shadow-[0_10px_14px_rgba(35,70,216,0.35)]" aria-hidden>
         <polygon points={points} className="fill-berry" strokeLinejoin="round" />
         <circle cx="50" cy="50" r="36" fill="none" stroke="white" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="3 4" />
       </svg>
       <span className="relative text-center font-display font-semibold leading-none text-white">
         <span className="block text-xs text-sky-soft">Coming</span>
-        <span className="text-[1.75rem] sm:text-3xl">{LAUNCH_YEAR}</span>
+        <span className="text-2xl sm:text-3xl">{LAUNCH_YEAR}</span>
       </span>
     </div>
   );

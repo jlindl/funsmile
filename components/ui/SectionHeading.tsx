@@ -22,7 +22,7 @@ export default function SectionHeading({ eyebrow, title, sub, align = "center", 
         {eyebrow}
       </p>
       <h2
-        className={`mt-4 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-[3.4rem] ${
+        className={`mt-4 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-balance sm:text-[3.4rem] ${
           light ? "text-white" : "text-ink"
         }`}
       >

@@ -38,11 +38,11 @@ export default async function FlavourPage({ params, searchParams }: Props) {
     <>
       <section className="relative overflow-hidden" style={{ background: f.soft }}>
         <div aria-hidden className="absolute -right-32 top-10 h-[30rem] w-[30rem] rounded-full opacity-30 blur-3xl" style={{ background: f.colour }} />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-20">
-          <div className="relative flex h-[500px] items-center justify-center sm:h-[600px]">
-            <div aria-hidden className="absolute aspect-square h-[80%] max-w-full rounded-full bg-white/80" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-5 pb-14 pt-6 sm:gap-10 sm:px-8 sm:py-14 lg:grid-cols-2 lg:py-20">
+          <div className="relative flex h-[420px] items-center justify-center sm:h-[600px]">
+            <div aria-hidden className="absolute aspect-square w-[min(84%,480px)] rounded-full bg-white/80" />
             <div className="animate-float" style={{ "--tilt": "-5deg" } as React.CSSProperties}>
-              <Image src={f.image} alt={`FunSmile ${f.name} toothpaste pump pack`} width={320} height={1500} priority className="relative h-[460px] w-auto sm:h-[560px]" />
+              <Image src={f.image} alt={`FunSmile ${f.name} toothpaste pump pack`} width={320} height={1500} priority className="relative h-[380px] w-auto sm:h-[560px]" />
             </div>
           </div>
 
@@ -100,9 +100,9 @@ export default async function FlavourPage({ params, searchParams }: Props) {
               ))}
             </dl>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#waitlist" variant="candy">Notify me at launch</Button>
-              <Button href="/#range" variant="outline">See all flavours</Button>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button href="#waitlist" variant="candy" className="w-full sm:w-auto">Notify me at launch</Button>
+              <Button href="/#range" variant="outline" className="w-full sm:w-auto">See all flavours</Button>
             </div>
           </div>
         </div>

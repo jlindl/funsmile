@@ -9,7 +9,7 @@ import { LAUNCH_YEAR } from "@/lib/products";
 
 const nav = [
   { href: "/#range", label: "Flavours" },
-  { href: "/#formulas", label: "Fluoride & nano-HA" },
+  { href: "/#formulas", label: "Fluoride & nano‑HA" },
   { href: "/#lab", label: "Lab tested" },
   { href: "/#faq", label: "FAQ" },
 ];

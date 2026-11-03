@@ -19,9 +19,9 @@ export default function LabTested() {
   return (
     <section id="lab" className="relative scroll-mt-28">
       <Wave fill="var(--color-sky-soft)" />
-      <div className="relative overflow-hidden bg-sky-soft py-20 sm:py-24">
+      <div className="relative overflow-hidden bg-sky-soft py-14 sm:py-24">
         <Bubbles tint="#2346d8" count={6} className="opacity-60" />
-        <div className="relative mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[1fr_1.25fr] lg:items-center">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:gap-14 sm:px-8 lg:grid-cols-[1fr_1.25fr] lg:items-center">
           <Reveal>
             <SectionHeading
               align="left"
@@ -41,7 +41,7 @@ export default function LabTested() {
               const look = looks[i % looks.length];
               return (
                 <Reveal key={c.title} delay={i * 0.08}>
-                  <li className="h-full rounded-[2rem] bg-white p-7 shadow-[0_2px_0_0_var(--color-line),0_18px_40px_-28px_rgba(30,27,75,0.35)] transition duration-300 hover:-translate-y-1">
+                  <li className="h-full rounded-[2rem] bg-white p-6 sm:p-7 shadow-[0_2px_0_0_var(--color-line),0_18px_40px_-28px_rgba(30,27,75,0.35)] transition duration-300 hover:-translate-y-1">
                     <span className={`grid h-14 w-14 place-items-center rounded-2xl ${look.soft}`}>
                       <span className={`grid h-10 w-10 place-items-center rounded-xl text-white ${look.bg}`}>
                         <Icon name={look.icon} className="h-6 w-6" />
@@ -72,7 +72,7 @@ export default function LabTested() {
 /** Round "quality checked" seal with text on a circle. */
 function Seal() {
   return (
-    <div className="relative mt-10 h-36 w-36 animate-wiggle">
+    <div className="relative mt-8 h-28 w-28 animate-wiggle sm:mt-10 sm:h-36 sm:w-36">
       <svg viewBox="0 0 120 120" className="absolute inset-0" aria-hidden>
         <defs>
           <path id="seal-ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />

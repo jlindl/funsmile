@@ -18,13 +18,13 @@ const cards = [
     bg: "bg-leaf",
     soft: "bg-leaf-soft",
     text: "text-leaf",
-    who: "Fluoride-free, powered by nano-HA.",
+    who: "Fluoride-free, powered by nano‑HA.",
   },
 ];
 
 export default function Formulas() {
   return (
-    <section id="formulas" className="scroll-mt-28 py-20 sm:py-28">
+    <section id="formulas" className="scroll-mt-28 py-16 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <SectionHeading
@@ -39,17 +39,17 @@ export default function Formulas() {
             const f = formulas[c.key];
             return (
               <Reveal key={c.key} delay={i * 0.1}>
-                <article className={`relative h-full overflow-hidden rounded-[2.25rem] p-8 sm:p-10 ${c.soft}`}>
+                <article className={`relative h-full overflow-hidden rounded-[2rem] p-6 sm:rounded-[2.25rem] sm:p-10 ${c.soft}`}>
                   <span aria-hidden className={`absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-15 ${c.bg}`} />
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
                     <span className={`grid h-16 w-16 place-items-center rounded-2xl text-white ${c.bg}`}>
                       <Icon name={c.icon} className="h-8 w-8" />
                     </span>
-                    <span className={`relative rounded-full bg-white px-4 py-1.5 font-display font-semibold ${c.text}`}>
+                    <span className={`relative whitespace-nowrap rounded-full bg-white px-4 py-1.5 font-display font-semibold ${c.text}`}>
                       Active: {f.active}
                     </span>
                   </div>
-                  <h3 className="mt-6 font-display text-3xl font-semibold">{f.title}</h3>
+                  <h3 className="mt-6 font-display text-[1.75rem] font-semibold sm:text-3xl">{f.title}</h3>
                   <p className={`mt-1 font-display text-lg font-medium ${c.text}`}>{c.who}</p>
                   <p className="mt-4 text-lg text-ink-muted">{f.blurb}</p>
                   <ul className="mt-6 space-y-3">

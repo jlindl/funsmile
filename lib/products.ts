@@ -87,7 +87,7 @@ export const formulas: Record<
 /** Plain-English explainer for the fluoride-free active, reused across the site. */
 export const NANO_HA = {
   name: "Nano-hydroxyapatite",
-  short: "nano-HA",
+  short: "nano‑HA",
   what: "Hydroxyapatite is the mineral your tooth enamel is mostly made of. Nano-hydroxyapatite is a super-fine form of it that helps fill in tiny weak spots and strengthen enamel, without fluoride.",
 };
 
@@ -105,7 +105,7 @@ export const claims = [
     body: "Safety assessed and certified to UK and EU cosmetic regulations.",
   },
   {
-    title: "Fluoride or nano-HA",
+    title: "Fluoride or nano‑HA",
     body: "Every flavour comes with fluoride, or fluoride-free with nano-hydroxyapatite. You choose what suits you.",
   },
   {
