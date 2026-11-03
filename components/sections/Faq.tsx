@@ -9,7 +9,11 @@ export const faqs = [
   },
   {
     q: "What's the difference between fluoride and fluoride-free?",
-    a: "Our fluoride formula helps protect against cavities and strengthen enamel. Our fluoride-free formula is for anyone who prefers to skip fluoride. Both come in every flavour and both freshen breath.",
+    a: "Our fluoride formula helps protect against cavities and strengthen enamel. Our fluoride-free formula uses nano-hydroxyapatite instead, to help strengthen and remineralise enamel without fluoride. Both come in every flavour and both freshen breath.",
+  },
+  {
+    q: "What is nano-hydroxyapatite?",
+    a: "Hydroxyapatite is the mineral your tooth enamel is mostly made of. Nano-hydroxyapatite (nano-HA) is a super-fine form of it that helps fill in tiny weak spots on the surface of your teeth and strengthen enamel. It's the active ingredient in our fluoride-free formula.",
   },
   {
     q: "Is FunSmile lab tested?",
@@ -38,10 +42,10 @@ export default function Faq() {
         </Reveal>
         <div className="mt-12 space-y-3">
           {faqs.map((f) => (
-            <details key={f.q} className="group rounded-3xl bg-white px-6 ring-1 ring-line open:ring-ink/20 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-display text-lg font-bold">
+            <details key={f.q} className="group rounded-[1.75rem] bg-mist px-6 transition-colors open:bg-white open:shadow-[0_0_0_2px_var(--color-candy-soft),0_16px_40px_-24px_rgba(30,27,75,0.3)] [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-display text-xl font-semibold">
                 {f.q}
-                <span aria-hidden className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cream text-xl transition duration-300 group-open:rotate-45 group-open:bg-sun">
+                <span aria-hidden className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-2xl text-candy transition duration-300 group-open:rotate-45 group-open:bg-candy group-open:text-white">
                   +
                 </span>
               </summary>

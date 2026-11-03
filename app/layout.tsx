@@ -1,22 +1,17 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist, Instrument_Serif } from "next/font/google";
+import { Fredoka, Nunito } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage" });
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
-const instrument = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
-});
+const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-fredoka" });
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 
 export const metadata: Metadata = {
   title: "FunSmile | Flavoured toothpaste, launching 2027",
   description:
-    "Watermelon Fresh, Cotton Candy and Blue Raspberry toothpaste in fluoride and fluoride-free formulas. Lab tested, certified, and launching in 2027.",
+    "Watermelon Fresh, Cotton Candy and Blue Raspberry toothpaste with fluoride, or fluoride-free with nano-hydroxyapatite. Lab tested, certified, and launching in 2027.",
 };
 
 export default function RootLayout({
@@ -25,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${bricolage.variable} ${geist.variable} ${instrument.variable}`}>
+    <html lang="en-GB" className={`${fredoka.variable} ${nunito.variable}`}>
       <body className="antialiased">
         <a
           href="#main"
@@ -33,6 +28,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <SmoothScroll />
         <Header />
         <main id="main">{children}</main>
         <Footer />

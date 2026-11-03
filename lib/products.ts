@@ -65,20 +65,30 @@ export const flavours: Flavour[] = [
 
 export const formulas: Record<
   Formula,
-  { label: string; title: string; blurb: string; points: string[] }
+  { label: string; title: string; active: string; blurb: string; points: string[] }
 > = {
   fluoride: {
     label: "Fluoride",
     title: "Fluoride formula",
+    active: "Fluoride",
     blurb: "Fluoride helps protect against cavities and strengthen enamel.",
     points: ["Cavity protection", "Strengthens enamel", "Fresh breath"],
   },
   "fluoride-free": {
     label: "Fluoride-free",
     title: "Fluoride-free formula",
-    blurb: "The same flavours and the same fun, made for anyone who prefers to go fluoride-free.",
-    points: ["No fluoride", "Fresh breath", "Same great flavours"],
+    active: "Nano-hydroxyapatite",
+    blurb:
+      "Made with nano-hydroxyapatite in place of fluoride: a tiny form of the same mineral your enamel is made from, to help strengthen and remineralise teeth.",
+    points: ["Nano-hydroxyapatite", "Helps strengthen enamel", "Fresh breath"],
   },
+};
+
+/** Plain-English explainer for the fluoride-free active, reused across the site. */
+export const NANO_HA = {
+  name: "Nano-hydroxyapatite",
+  short: "nano-HA",
+  what: "Hydroxyapatite is the mineral your tooth enamel is mostly made of. Nano-hydroxyapatite is a super-fine form of it that helps fill in tiny weak spots and strengthen enamel, without fluoride.",
 };
 
 /**
@@ -95,8 +105,8 @@ export const claims = [
     body: "Safety assessed and certified to UK and EU cosmetic regulations.",
   },
   {
-    title: "Fluoride or fluoride-free",
-    body: "Every flavour comes in both formulas, so you can choose what suits you.",
+    title: "Fluoride or nano-HA",
+    body: "Every flavour comes with fluoride, or fluoride-free with nano-hydroxyapatite. You choose what suits you.",
   },
   {
     title: "No-mess pump",

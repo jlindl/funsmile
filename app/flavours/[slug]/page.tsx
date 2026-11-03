@@ -4,9 +4,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 import PackCard from "@/components/PackCard";
 import Waitlist from "@/components/sections/Waitlist";
-import { claims, flavours, formulas, getFlavour, LAUNCH_YEAR, PACK_SIZE, type Formula } from "@/lib/products";
+import { claims, flavours, formulas, getFlavour, LAUNCH_YEAR, NANO_HA, PACK_SIZE, type Formula } from "@/lib/products";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!f) return {};
   return {
     title: `${f.name} toothpaste | FunSmile`,
-    description: `${f.tagline} FunSmile ${f.name} comes in fluoride and fluoride-free formulas. Launching ${LAUNCH_YEAR}.`,
+    description: `${f.tagline} FunSmile ${f.name} comes with fluoride, or fluoride-free with nano-hydroxyapatite. Launching ${LAUNCH_YEAR}.`,
   };
 }
 
@@ -50,17 +51,17 @@ export default async function FlavourPage({ params, searchParams }: Props) {
               <Link href="/" className="hover:text-ink">Home</Link> / <Link href="/#range" className="hover:text-ink">Flavours</Link> / <span className="text-ink">{f.name}</span>
             </nav>
             <div className="mt-5 flex flex-wrap gap-2">
-              <Badge className="bg-sun text-ink-deep">Coming {LAUNCH_YEAR}</Badge>
+              <Badge className="text-white" style={{ background: f.colour }}>Coming {LAUNCH_YEAR}</Badge>
               <Badge className="bg-white text-ink">Lab tested</Badge>
               <Badge className="bg-white text-ink">Certified</Badge>
             </div>
-            <h1 className="mt-5 font-display text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl" style={{ color: f.colour }}>
+            <h1 className="mt-5 font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl" style={{ color: f.colour }}>
               {f.name}
             </h1>
-            <p className="mt-3 font-serif text-2xl italic text-ink sm:text-3xl">{f.tagline}</p>
+            <p className="mt-3 font-display text-2xl font-medium text-ink-soft sm:text-3xl">{f.tagline}</p>
             <p className="mt-5 max-w-lg text-lg text-ink-muted">{f.description}</p>
 
-            <h2 className="mt-8 font-display text-sm font-bold uppercase tracking-[0.18em]">Choose your formula</h2>
+            <h2 className="mt-8 font-display text-lg font-semibold">Choose your formula</h2>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               {(Object.keys(formulas) as Formula[]).map((key) => {
                 const on = key === formula;
@@ -70,16 +71,20 @@ export default async function FlavourPage({ params, searchParams }: Props) {
                     href={`/flavours/${f.slug}?formula=${key}`}
                     scroll={false}
                     aria-current={on ? "true" : undefined}
-                    className={`rounded-3xl p-5 transition ${on ? "bg-ink text-white shadow-xl" : "bg-white ring-1 ring-line hover:ring-ink/30"}`}
+                    className={`rounded-[1.75rem] p-5 transition ${on ? (key === "fluoride" ? "bg-berry" : "bg-leaf") + " text-white shadow-xl" : "bg-white ring-1 ring-line hover:ring-ink/30"}`}
                   >
-                    <span className="font-display text-lg font-extrabold">{formulas[key].label}</span>
+                    <span className="font-display text-xl font-semibold">{formulas[key].label}</span>
                     <span className={`mt-1 block text-sm ${on ? "text-white/75" : "text-ink-muted"}`}>{formulas[key].points.join(" · ")}</span>
                   </Link>
                 );
               })}
             </div>
             {formula === "fluoride-free" && (
-              <p className="mt-3 text-sm font-semibold text-ink-muted">Fluoride-free pack design will be revealed before launch.</p>
+              <div className="mt-3 rounded-[1.5rem] bg-white/80 p-4">
+                <p className="font-display font-semibold text-leaf">Powered by {NANO_HA.name.toLowerCase()}</p>
+                <p className="mt-1 text-sm text-ink-muted">{NANO_HA.what}</p>
+                <p className="mt-2 text-sm font-semibold text-ink-muted">Fluoride-free pack design will be revealed before launch.</p>
+              </div>
             )}
 
             <dl className="mt-8 grid grid-cols-3 gap-3 text-center">
@@ -88,29 +93,31 @@ export default async function FlavourPage({ params, searchParams }: Props) {
                 ["Format", "Pump"],
                 ["Launch", String(LAUNCH_YEAR)],
               ].map(([k, v]) => (
-                <div key={k} className="rounded-2xl bg-white/70 px-3 py-4">
-                  <dt className="text-xs font-bold uppercase tracking-wider text-ink-muted">{k}</dt>
-                  <dd className="mt-1 font-display font-extrabold">{v}</dd>
+                <div key={k} className="rounded-[1.5rem] bg-white/80 px-3 py-4">
+                  <dt className="text-sm font-bold text-ink-muted">{k}</dt>
+                  <dd className="mt-1 font-display text-lg font-semibold">{v}</dd>
                 </div>
               ))}
             </dl>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#waitlist" variant="primary">Notify me at launch</Button>
-              <Button href="/#range" variant="secondary">See all flavours</Button>
+              <Button href="#waitlist" variant="candy">Notify me at launch</Button>
+              <Button href="/#range" variant="outline">See all flavours</Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="bg-mist py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Tastes like {f.short.toLowerCase()}. Works like toothpaste.</h2>
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Tastes like {f.short.toLowerCase()}. Works like toothpaste.</h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {claims.map((c) => (
-              <li key={c.title} className="rounded-3xl bg-white p-6 ring-1 ring-line">
-                <span className="grid h-10 w-10 place-items-center rounded-full font-bold text-white" style={{ background: f.colour }} aria-hidden>✓</span>
-                <h3 className="mt-4 font-display text-xl font-extrabold">{c.title}</h3>
+              <li key={c.title} className="rounded-[2rem] bg-white p-6 shadow-[0_2px_0_0_var(--color-line)]">
+                <span className="grid h-10 w-10 place-items-center rounded-full text-white" style={{ background: f.colour }} aria-hidden>
+                  <Icon name="check" className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-display text-xl font-semibold">{c.title}</h3>
                 <p className="mt-2 text-ink-muted">{c.body}</p>
               </li>
             ))}
@@ -118,9 +125,9 @@ export default async function FlavourPage({ params, searchParams }: Props) {
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pt-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">More flavours to love</h2>
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">More flavours to love</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {others.map((o) => (
               <PackCard key={o.slug} flavour={o} formula={formula} />

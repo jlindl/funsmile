@@ -4,6 +4,7 @@ import Range from "@/components/sections/Range";
 import Stats from "@/components/sections/Stats";
 import FlavourPicker from "@/components/sections/FlavourPicker";
 import Formulas from "@/components/sections/Formulas";
+import NanoHA from "@/components/sections/NanoHA";
 import LabTested from "@/components/sections/LabTested";
 import Pump from "@/components/sections/Pump";
 import Faq, { faqs } from "@/components/sections/Faq";
@@ -31,6 +32,7 @@ export default function Home() {
       </div>
       <LabTested />
       <Formulas />
+      <NanoHA />
       <Pump />
       <Faq />
       <Waitlist />
