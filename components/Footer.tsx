@@ -51,7 +51,15 @@ export default function Footer() {
         <div className="relative border-t border-white/10">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-8">
             <p>© {new Date().getFullYear()} FunSmile. Products shown are pre-launch and packaging may change.</p>
-            <a href="#main" className="hover:text-white">Back to top ↑</a>
+            <div className="flex items-center gap-5">
+              <p>
+                Website by{" "}
+                <a href="https://www.integrate-tech.co.uk/web-design" className="underline-offset-2 hover:text-white hover:underline">
+                  Integrate
+                </a>
+              </p>
+              <a href="#main" className="hover:text-white">Back to top ↑</a>
+            </div>
           </div>
         </div>
       </div>
